@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_books"
+        android:icon="@drawable/ic__53918_library_book_books_education_study_icon"
+        android:title="Books" />
+
+    <item
+        android:id="@+id/navigation_characters"
+        android:icon="@drawable/icons8_o_um_anel"
+        android:title="Characters" />
+
+    <item
+        android:id="@+id/navigation_movies"
+        android:icon="@drawable/ic__52551_movie_icon"
+        android:title="Movies" />
+
+</menu>

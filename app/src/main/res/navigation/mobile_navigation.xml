@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_books">
+
+    <fragment
+        android:id="@+id/navigation_books"
+        android:name="com.example.theoneapp.ui.books.BooksFragment"
+        android:label="Books"
+        tools:layout="@layout/fragment_books" />
+
+    <fragment
+        android:id="@+id/navigation_characters"
+        android:name="com.example.theoneapp.ui.characters.CharactersFragment"
+        android:label="Characters"
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/action_navigation_characters_to_navigation_characters_description"
+            app:destination="@id/navigation_characters_description" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_movies"
+        android:name="com.example.theoneapp.ui.movies.MoviesFragment"
+        android:label="Movies"
+        tools:layout="@layout/fragment_movies" />
+
+    <fragment
+        android:id="@+id/navigation_characters_description"
+        android:name="com.example.theoneapp.ui.characters.CharacterDescriptionFragment"
+        android:label="Character_Description"
+        tools:layout="@layout/fragment_character_description"/>
+</navigation>
