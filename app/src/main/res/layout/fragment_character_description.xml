@@ -195,6 +195,7 @@
         tools:text="texto" />
 
     <Button
+        android:id="@+id/btQuotes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"

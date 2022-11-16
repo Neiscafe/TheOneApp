@@ -1,6 +1,7 @@
 package com.example.theoneapp.ui.characters
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentResultListener
 import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.theoneapp.R
 import com.example.theoneapp.databinding.FragmentCharacterDescriptionBinding
@@ -34,57 +36,69 @@ class CharacterDescriptionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
+        screenBinding()
+        setupClickListener()
+
+    }
+
+    private fun setupClickListener() {
+        binding.btQuotes.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_characters_description_to_navigation_character_quotes)
+        }
+    }
+
+    private fun screenBinding() {
         setFragmentResultListener("requestKey") { key, bundle ->
             val result = bundle.getParcelable<Character>("characterBundle")
 
             with(binding) {
                 tvCharacterName.text = result?.name
 
-                if(result?.height.isNullOrEmpty()){
+                if (result?.height.isNullOrEmpty()) {
                     tvCharacterHeight.text = "Unknown"
-                }else{
+                } else {
                     tvCharacterHeight.text = result?.height
                 }
 
-                if(result?.race.isNullOrEmpty()){
+                if (result?.race.isNullOrEmpty()) {
                     tvCharacterRace.text = "Unknown"
-                }else{
+                } else {
                     tvCharacterRace.text = result?.race
                 }
 
-                if(result?.gender.isNullOrEmpty()){
+                if (result?.gender.isNullOrEmpty()) {
                     tvCharacterGender.text = "Unknown"
-                }else{
+                } else {
                     tvCharacterGender.text = result?.gender
                 }
 
-                if(result?.birth.isNullOrEmpty()){
+                if (result?.birth.isNullOrEmpty()) {
                     tvCharacterBirth.text = "Unknown"
-                }else{
+                } else {
                     tvCharacterBirth.text = result?.birth
                 }
 
-                if(result?.spouse.isNullOrEmpty()){
+                if (result?.spouse.isNullOrEmpty()) {
                     tvCharacterSpouse.text = "Unknown"
-                }else{
+                } else {
                     tvCharacterSpouse.text = result?.spouse
                 }
 
-                if(result?.death.isNullOrEmpty()){
+                if (result?.death.isNullOrEmpty()) {
                     tvCharacterDeath.text = "Unknown"
-                }else{
+                } else {
                     tvCharacterDeath.text = result?.death
                 }
 
-                if(result?.realm.isNullOrEmpty()){
+                if (result?.realm.isNullOrEmpty()) {
                     tvCharacterRealm.text = "Unknown"
-                }else{
+                } else {
                     tvCharacterRealm.text = result?.realm
                 }
 
-                if(result?.height.isNullOrEmpty()){
+                if (result?.height.isNullOrEmpty()) {
                     tvCharacterHair.text = "Unknown"
-                }else{
+                } else {
                     tvCharacterHair.text = result?.hair
                 }
             }
@@ -92,7 +106,6 @@ class CharacterDescriptionFragment : Fragment() {
         activity?.apply {
             findViewById<BottomNavigationView>(R.id.nav_view).visibility = View.GONE
         }
-
     }
 
     override fun onDestroyView() {

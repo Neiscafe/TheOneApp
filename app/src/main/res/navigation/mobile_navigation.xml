@@ -30,6 +30,17 @@
     <fragment
         android:id="@+id/navigation_characters_description"
         android:name="com.example.theoneapp.ui.characters.CharacterDescriptionFragment"
-        android:label="Character_Description"
-        tools:layout="@layout/fragment_character_description"/>
+        android:label="Characters_Description"
+        tools:layout="@layout/fragment_character_description">
+        <action
+            android:id="@+id/action_navigation_characters_description_to_navigation_character_quotes"
+            app:destination="@id/navigation_character_quotes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_character_quotes"
+        android:name="com.example.theoneapp.ui.characters.CharacterQuotesFragment"
+        android:label="Character_Quotes"
+        tools:layout="@layout/fragment_character_quotes">
+    </fragment>
 </navigation>
