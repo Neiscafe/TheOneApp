@@ -43,49 +43,49 @@ class CharacterDescriptionFragment : Fragment() {
                 if(result?.height.isNullOrEmpty()){
                     tvCharacterHeight.text = "Unknown"
                 }else{
-                    tvCharacterHeight.text = "Height: " + result?.height
+                    tvCharacterHeight.text = result?.height
                 }
 
                 if(result?.race.isNullOrEmpty()){
                     tvCharacterRace.text = "Unknown"
                 }else{
-                    tvCharacterRace.text = "Race: " + result?.race
+                    tvCharacterRace.text = result?.race
                 }
 
                 if(result?.gender.isNullOrEmpty()){
                     tvCharacterGender.text = "Unknown"
                 }else{
-                    tvCharacterGender.text = "Gender: " + result?.gender
+                    tvCharacterGender.text = result?.gender
                 }
 
                 if(result?.birth.isNullOrEmpty()){
                     tvCharacterBirth.text = "Unknown"
                 }else{
-                    tvCharacterBirth.text = "Birth: " + result?.birth
+                    tvCharacterBirth.text = result?.birth
                 }
 
                 if(result?.spouse.isNullOrEmpty()){
                     tvCharacterSpouse.text = "Unknown"
                 }else{
-                    tvCharacterSpouse.text = "Spouse: " + result?.spouse
+                    tvCharacterSpouse.text = result?.spouse
                 }
 
                 if(result?.death.isNullOrEmpty()){
                     tvCharacterDeath.text = "Unknown"
                 }else{
-                    tvCharacterDeath.text = "Death: " + result?.death
+                    tvCharacterDeath.text = result?.death
                 }
 
                 if(result?.realm.isNullOrEmpty()){
                     tvCharacterRealm.text = "Unknown"
                 }else{
-                    tvCharacterRealm.text = "Realm: " + result?.realm
+                    tvCharacterRealm.text = result?.realm
                 }
 
                 if(result?.height.isNullOrEmpty()){
                     tvCharacterHair.text = "Unknown"
                 }else{
-                    tvCharacterHair.text = "Hair: " + result?.hair
+                    tvCharacterHair.text = result?.hair
                 }
             }
         }
