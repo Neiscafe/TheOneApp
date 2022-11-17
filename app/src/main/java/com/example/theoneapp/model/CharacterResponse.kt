@@ -6,10 +6,4 @@ import java.io.Serializable
 data class CharacterResponse(
     @SerializedName("docs") val characters: List<Character>
 ) : Serializable
-//{
-//    val characterList: List<Character>
-//        get() = characters?.map {
-//            it.
-//        }
-//}
 

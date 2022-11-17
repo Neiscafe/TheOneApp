@@ -48,23 +48,26 @@ class RepositoryImpl(val api: Api) : Repository {
         }
     }
 
-//    override suspend fun retrieveCharactersSearch(query: String): NetworkResponse<CharacterResponse> {
-//        return try {
-//            val response = api.retrieveCharactersSearch(query)
-//            if (response.isSuccessful) {
-//                NetworkResponse.Success(response.body()!!)
-//            } else {
-//                NetworkResponse.Failed(Exception())
-//            }
-//        } catch (e: Exception) {
-//            NetworkResponse.Failed(ApiError.GenericException())
-//        }
-//    }
+    override suspend fun retrieveCharacterQuotes(characterId: String?): NetworkResponse<QuoteResponse> {
+        return try {
+        val response = api.retrieveCharacterQuote(characterId)
+            if (response.isSuccessful) {
+        return NetworkResponse.Success(response.body()!!)
+            } else {
+                Log.e(TAG, "retrieveCharacterQuotes: deu pau")
+                NetworkResponse.Failed(Exception())
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "retrieveCharacterQuotes: deu pau mais")
+            NetworkResponse.Failed(ApiError.GenericException())
+        }
+    }
+
 }
 
 interface Repository {
     suspend fun retrieveBooks(): NetworkResponse<BookResponse>
     suspend fun retrieveMovie(): NetworkResponse<MovieResponse>
     suspend fun retrieveCharacters(): NetworkResponse<CharacterResponse>
-//    suspend fun retrieveCharactersSearch(query: String): NetworkResponse<CharacterResponse>
+    suspend fun retrieveCharacterQuotes(characterId: String?): NetworkResponse<QuoteResponse>
 }

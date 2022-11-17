@@ -1,4 +1,4 @@
-package com.example.theoneapp.ui
+package com.example.theoneapp.ui.books
 
 import android.view.LayoutInflater
 import android.view.View

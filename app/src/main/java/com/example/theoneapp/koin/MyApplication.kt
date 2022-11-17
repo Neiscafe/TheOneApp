@@ -1,4 +1,4 @@
-package com.example.theoneapp
+package com.example.theoneapp.koin
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext

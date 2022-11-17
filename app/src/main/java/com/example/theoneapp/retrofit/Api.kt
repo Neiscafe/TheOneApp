@@ -3,8 +3,10 @@ package com.example.theoneapp.retrofit
 import com.example.theoneapp.model.BookResponse
 import com.example.theoneapp.model.CharacterResponse
 import com.example.theoneapp.model.MovieResponse
+import com.example.theoneapp.model.QuoteResponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface Api {
 
@@ -17,7 +19,10 @@ interface Api {
     @GET("character")
     suspend fun retrieveCharacters(): Response<CharacterResponse>
 
+    @GET("character/{id}/quote")
+    suspend fun retrieveCharacterQuote(
+        @Path("id") characterId: String?
+    ): Response<QuoteResponse>
 
-//    suspend fun retrieveCharactersSearch(query: String): Any
 
 }

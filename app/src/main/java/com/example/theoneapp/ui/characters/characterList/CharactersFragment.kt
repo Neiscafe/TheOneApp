@@ -1,5 +1,6 @@
-package com.example.theoneapp.ui.characters
+package com.example.theoneapp.ui.characters.characterList
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.example.theoneapp.R
 import com.example.theoneapp.databinding.FragmentCharactersBinding
 import com.example.theoneapp.model.Character
 import com.example.theoneapp.model.CharacterResponse
+import com.example.theoneapp.ui.characters.characterDescription.CharacterDescriptionActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -106,9 +108,9 @@ class CharactersFragment : Fragment() {
             characterAdapter.append(character.characters)
             characterAdapter.setClickListener(object : CharacterAdapter.ClickListener {
                 override fun onItemClick(characterItem: Character, position: Int) {
-                    findNavController().navigate(R.id.action_navigation_characters_to_navigation_characters_description)
-                    val result = characterItem
-                    setFragmentResult("requestKey", bundleOf("characterBundle" to result))
+                    val intent = Intent(requireActivity(), CharacterDescriptionActivity::class.java)
+                    intent.putExtra("characterItem", characterItem)
+                    startActivity(intent)
                 }
             })
         }

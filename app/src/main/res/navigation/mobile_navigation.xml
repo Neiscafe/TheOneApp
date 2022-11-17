@@ -13,12 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_characters"
-        android:name="com.example.theoneapp.ui.characters.CharactersFragment"
+        android:name="com.example.theoneapp.ui.characters.characterList.CharactersFragment"
         android:label="Characters"
         tools:layout="@layout/fragment_characters" >
-        <action
-            android:id="@+id/action_navigation_characters_to_navigation_characters_description"
-            app:destination="@id/navigation_characters_description" />
     </fragment>
 
     <fragment
@@ -28,19 +25,12 @@
         tools:layout="@layout/fragment_movies" />
 
     <fragment
-        android:id="@+id/navigation_characters_description"
-        android:name="com.example.theoneapp.ui.characters.CharacterDescriptionFragment"
-        android:label="Characters_Description"
-        tools:layout="@layout/fragment_character_description">
-        <action
-            android:id="@+id/action_navigation_characters_description_to_navigation_character_quotes"
-            app:destination="@id/navigation_character_quotes" />
-    </fragment>
-
-    <fragment
         android:id="@+id/navigation_character_quotes"
-        android:name="com.example.theoneapp.ui.characters.CharacterQuotesFragment"
+        android:name="com.example.theoneapp.ui.characters.characterQuotes.CharacterQuotesFragment"
         android:label="Character_Quotes"
         tools:layout="@layout/fragment_character_quotes">
+        <argument
+            android:name="characterId"
+            app:argType="string" />
     </fragment>
 </navigation>

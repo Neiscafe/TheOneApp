@@ -1,4 +1,4 @@
-package com.example.theoneapp.ui.characters
+package com.example.theoneapp.ui.characters.characterList
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
