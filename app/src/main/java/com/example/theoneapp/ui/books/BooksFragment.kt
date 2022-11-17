@@ -17,7 +17,7 @@ class BooksFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel by viewModel<BooksViewModel>()
-    private lateinit var adapter: BookAdapter
+    private lateinit var bookAdapter: BookAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,7 +32,7 @@ class BooksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = BookAdapter()
+        bookAdapter = BookAdapter()
         viewModel.retrieveBooks()
         initObserver()
     }
@@ -54,10 +54,9 @@ class BooksFragment : Fragment() {
     }
 
     private fun setAdapter(book: BookResponse) {
-        binding.rvBookList.adapter = adapter
+        binding.rvBookList.adapter = bookAdapter
         binding.rvBookList.layoutManager = LinearLayoutManager(this.requireContext())
-        adapter.append(book.docs)
-
+        bookAdapter.append(book.docs)
     }
 
     private fun apiError() {

@@ -111,6 +111,7 @@ class CharactersFragment : Fragment() {
                     val intent = Intent(requireActivity(), CharacterDescriptionActivity::class.java)
                     intent.putExtra("characterItem", characterItem)
                     startActivity(intent)
+                    
                 }
             })
         }

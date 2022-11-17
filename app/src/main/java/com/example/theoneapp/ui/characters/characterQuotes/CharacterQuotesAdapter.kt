@@ -16,8 +16,26 @@ class CharacterQuotesAdapter() : RecyclerView.Adapter<CharacterQuotesAdapter.Vie
         RecyclerView.ViewHolder(itemview) {
 
         fun bind(quote: Quote) {
+
+            val movie = itemView.findViewById<TextView>(R.id.tvQuoteMovie)
             itemView.findViewById<TextView>(R.id.tvQuote).text = quote.dialog
-            itemView.findViewById<TextView>(R.id.tvQuoteMovie).text = quote.movieId
+            if (quote.movieId.equals("5cd95395de30eff6ebccde56")) {
+                movie.text = "The Lord of the Rings Series"
+            } else if (quote.movieId.equals("5cd95395de30eff6ebccde57")) {
+                movie.text = "The Hobbit Series"
+            } else if (quote.movieId.equals("5cd95395de30eff6ebccde58")) {
+                movie.text = "The Unexpected Journey"
+            } else if (quote.movieId.equals("5cd95395de30eff6ebccde59")) {
+                movie.text = "The Desolation of Smaug"
+            } else if (quote.movieId.equals("5cd95395de30eff6ebccde5a")) {
+                movie.text = "The Battle of the Five Armies"
+            } else if (quote.movieId.equals("5cd95395de30eff6ebccde5b")) {
+                movie.text = "The Two Towers"
+            } else if (quote.movieId.equals("5cd95395de30eff6ebccde5c")) {
+                movie.text = "The Fellowship of the Ring"
+            } else if (quote.movieId.equals("5cd95395de30eff6ebccde5d")) {
+                movie.text = "The Return of the King"
+            }
         }
     }
 
