@@ -23,14 +23,4 @@
         android:name="com.example.theoneapp.ui.movies.MoviesFragment"
         android:label="Movies"
         tools:layout="@layout/fragment_movies" />
-
-    <fragment
-        android:id="@+id/navigation_character_quotes"
-        android:name="com.example.theoneapp.ui.characters.characterQuotes.CharacterQuotesFragment"
-        android:label="Character_Quotes"
-        tools:layout="@layout/fragment_character_quotes">
-        <argument
-            android:name="characterId"
-            app:argType="string" />
-    </fragment>
 </navigation>

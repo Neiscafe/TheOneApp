@@ -1,9 +1,11 @@
 package com.example.theoneapp.ui.characters.characterDescription
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.theoneapp.databinding.ActivityCharacterDescriptionBinding
 import com.example.theoneapp.model.Character
+import com.example.theoneapp.ui.characters.characterQuotes.CharacterQuotesActivity
 
 
 class CharacterDescriptionActivity : AppCompatActivity() {
@@ -76,7 +78,9 @@ class CharacterDescriptionActivity : AppCompatActivity() {
         }
 
         binding.btQuotes.setOnClickListener {
-//            val intent = Intent(applicationContext,)
+            val intent = Intent(this, CharacterQuotesActivity::class.java)
+            intent.putExtra("characterId", result?._id)
+            startActivity(intent)
         }
     }
 
