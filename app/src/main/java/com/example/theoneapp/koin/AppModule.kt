@@ -4,6 +4,7 @@ import com.example.theoneapp.repository.Repository
 import com.example.theoneapp.repository.RepositoryImpl
 import com.example.theoneapp.retrofit.ClientRetrofit
 import com.example.theoneapp.ui.books.BooksViewModel
+import com.example.theoneapp.ui.books.bookDescription.BookDescriptionViewModel
 import com.example.theoneapp.ui.characters.characterQuotes.CharacterQuotesViewModel
 import com.example.theoneapp.ui.characters.characterList.CharactersViewModel
 import com.example.theoneapp.ui.movies.MoviesViewModel
@@ -24,6 +25,9 @@ val viewModelModule = module(override = true) {
     }
     viewModel{
         CharacterQuotesViewModel(repository = get())
+    }
+    viewModel{
+        BookDescriptionViewModel(repository = get())
     }
 }
 

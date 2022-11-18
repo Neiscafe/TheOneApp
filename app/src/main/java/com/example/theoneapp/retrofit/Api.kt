@@ -1,9 +1,6 @@
 package com.example.theoneapp.retrofit
 
-import com.example.theoneapp.model.BookResponse
-import com.example.theoneapp.model.CharacterResponse
-import com.example.theoneapp.model.MovieResponse
-import com.example.theoneapp.model.QuoteResponse
+import com.example.theoneapp.model.*
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -23,6 +20,11 @@ interface Api {
     suspend fun retrieveCharacterQuote(
         @Path("id") characterId: String?
     ): Response<QuoteResponse>
+
+    @GET("book/{id}/chapter")
+    suspend fun retrieveBookChapters(
+        @Path("id") bookId: String?
+    ): Response<ChapterResponse>
 
 
 }

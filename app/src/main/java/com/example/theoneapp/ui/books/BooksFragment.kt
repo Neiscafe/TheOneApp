@@ -1,5 +1,6 @@
 package com.example.theoneapp.ui.books
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.theoneapp.databinding.FragmentBooksBinding
+import com.example.theoneapp.model.Book
 import com.example.theoneapp.model.BookResponse
+import com.example.theoneapp.ui.books.bookDescription.BookDescriptionActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BooksFragment : Fragment() {
@@ -58,6 +61,13 @@ class BooksFragment : Fragment() {
         binding.rvBookList.layoutManager =
             LinearLayoutManager(this.requireContext(), LinearLayoutManager.HORIZONTAL, false)
         bookAdapter.append(book.docs)
+        bookAdapter.setClickListener(object : BookAdapter.ClickListener {
+            override fun onItemClick(bookItem: Book, position: Int) {
+                val intent = Intent(requireActivity(), BookDescriptionActivity::class.java)
+                intent.putExtra("bookItem", bookItem)
+                startActivity(intent)
+            }
+        })
     }
 
     private fun apiError() {
