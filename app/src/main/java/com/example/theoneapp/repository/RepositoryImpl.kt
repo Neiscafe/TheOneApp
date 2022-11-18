@@ -50,9 +50,9 @@ class RepositoryImpl(val api: Api) : Repository {
 
     override suspend fun retrieveCharacterQuotes(characterId: String?): NetworkResponse<QuoteResponse> {
         return try {
-        val response = api.retrieveCharacterQuote(characterId)
+            val response = api.retrieveCharacterQuote(characterId)
             if (response.isSuccessful) {
-        return NetworkResponse.Success(response.body()!!)
+                return NetworkResponse.Success(response.body()!!)
             } else {
                 Log.e(TAG, "retrieveCharacterQuotes: deu pau")
                 NetworkResponse.Failed(Exception())

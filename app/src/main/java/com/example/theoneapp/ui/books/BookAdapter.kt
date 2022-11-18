@@ -16,8 +16,7 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(bookName: String) {
-            val tvBookName = itemView.findViewById<TextView>(R.id.tvBookName)
-            tvBookName.text = bookName
+
             with(bookName) {
                 if (equals("The Fellowship Of The Ring")) {
                     Glide.with(itemView)
