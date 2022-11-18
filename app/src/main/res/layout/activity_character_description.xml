@@ -4,209 +4,220 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.characters.characterDescription.CharacterDescriptionActivity">
-
-<!--    <com.google.android.material.appbar.AppBarLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:theme="@style/Theme.TheOneApp.AppBarOverlay">-->
-
-<!--        <androidx.appcompat.widget.Toolbar-->
-<!--            android:id="@+id/toolbar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?attr/actionBarSize"-->
-<!--            android:background="?attr/colorPrimary"-->
-<!--            app:popupTheme="@style/Theme.TheOneApp.PopupOverlay" />-->
-
-<!--    </com.google.android.material.appbar.AppBarLayout>-->
+    tools:context=".ui.characters.characterDescription.CharacterDescriptionActivity"
+    android:background="@color/grey">
 
     <TextView
         android:id="@+id/tvCharacterName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="50dp"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="40sp"
+        android:textColor="@color/lightOrange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/vSeparator"
         tools:text="character name" />
 
     <View
         android:id="@+id/vSeparator"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
+        android:layout_height="4dp"
+        android:background="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCharacterName" />
 
-    <TextView
-        android:id="@+id/tvCharacterHeightTx"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDescription"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:padding="17dp"
-        android:text="Height:"
-        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.287"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vSeparator" />
+        app:layout_constraintTop_toBottomOf="@id/vSeparator"
+        app:layout_constraintBottom_toTopOf="@id/btQuotes"
+        app:cardCornerRadius="6dp"
+        app:cardBackgroundColor="@color/lightGrey"
+        android:layout_margin="10dp">
 
-    <TextView
-        android:id="@+id/tvCharacterHeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@id/tvCharacterHeightTx"
-        app:layout_constraintTop_toTopOf="@id/tvCharacterHeightTx"
-        tools:text="texto" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvCharacterRaceTx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:text="Race:"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacterHeightTx" />
+            <TextView
+                android:id="@+id/tvCharacterHeightTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="Height:"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.287"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvCharacterRace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@id/tvCharacterRaceTx"
-        app:layout_constraintTop_toTopOf="@id/tvCharacterRaceTx"
-        tools:text="texto" />
+            <TextView
+                android:id="@+id/tvCharacterHeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCharacterHeightTx"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="texto" />
 
-    <TextView
-        android:id="@+id/tvCharacterGenderTx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:text="Gender:"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacterRaceTx" />
+            <TextView
+                android:id="@+id/tvCharacterRaceTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="Race:"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
+                app:layout_constraintTop_toBottomOf="@id/tvCharacterHeight" />
 
-    <TextView
-        android:id="@+id/tvCharacterGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@id/tvCharacterGenderTx"
-        app:layout_constraintTop_toTopOf="@id/tvCharacterGenderTx"
-        tools:text="texto" />
+            <TextView
+                android:id="@+id/tvCharacterRace"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCharacterRaceTx"
+                app:layout_constraintTop_toTopOf="@id/tvCharacterRaceTx"
+                tools:text="texto" />
 
-    <TextView
-        android:id="@+id/tvCharacterBirthTx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:text="Birth:"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacterGenderTx" />
+            <TextView
+                android:id="@+id/tvCharacterGenderTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="Gender:"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
+                app:layout_constraintTop_toBottomOf="@id/tvCharacterRace" />
 
-    <TextView
-        android:id="@+id/tvCharacterBirth"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/tvCharacterBirthTx"
-        app:layout_constraintTop_toTopOf="@id/tvCharacterBirthTx"
-        tools:text="texto" />
+            <TextView
+                android:id="@+id/tvCharacterGender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCharacterGenderTx"
+                app:layout_constraintTop_toTopOf="@id/tvCharacterGenderTx"
+                tools:text="texto" />
 
-    <TextView
-        android:id="@+id/tvCharacterSpouseTx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:text="Spouse:"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacterBirthTx" />
+            <TextView
+                android:id="@+id/tvCharacterBirthTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="Birth:"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
+                app:layout_constraintTop_toBottomOf="@id/tvCharacterGender" />
 
-    <TextView
-        android:id="@+id/tvCharacterSpouse"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/tvCharacterSpouseTx"
-        app:layout_constraintTop_toTopOf="@id/tvCharacterSpouseTx"
-        tools:text="texto" />
+            <TextView
+                android:id="@+id/tvCharacterBirth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/tvCharacterBirthTx"
+                app:layout_constraintTop_toTopOf="@id/tvCharacterBirthTx"
+                tools:text="texto" />
 
-    <TextView
-        android:id="@+id/tvCharacterDeathTx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:text="Death:"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacterSpouseTx" />
+            <TextView
+                android:id="@+id/tvCharacterSpouseTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="Spouse:"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
+                app:layout_constraintTop_toBottomOf="@id/tvCharacterBirth" />
 
-    <TextView
-        android:id="@+id/tvCharacterDeath"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@id/tvCharacterDeathTx"
-        app:layout_constraintTop_toTopOf="@id/tvCharacterDeathTx"
-        tools:text="texto" />
+            <TextView
+                android:id="@+id/tvCharacterSpouse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/tvCharacterSpouseTx"
+                app:layout_constraintTop_toTopOf="@id/tvCharacterSpouseTx"
+                tools:text="texto" />
 
-    <TextView
-        android:id="@+id/tvCharacterRealmTx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:text="Realm:"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacterDeathTx" />
+            <TextView
+                android:id="@+id/tvCharacterDeathTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="Death:"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
+                app:layout_constraintTop_toBottomOf="@id/tvCharacterSpouse" />
 
-    <TextView
-        android:id="@+id/tvCharacterRealm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@id/tvCharacterRealmTx"
-        app:layout_constraintTop_toTopOf="@id/tvCharacterRealmTx"
-        tools:text="texto" />
+            <TextView
+                android:id="@+id/tvCharacterDeath"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCharacterDeathTx"
+                app:layout_constraintTop_toTopOf="@id/tvCharacterDeathTx"
+                tools:text="texto" />
 
-    <TextView
-        android:id="@+id/tvCharacterHairTx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:text="Hair:"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacterRealmTx" />
+            <TextView
+                android:id="@+id/tvCharacterRealmTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="Realm:"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
+                app:layout_constraintTop_toBottomOf="@id/tvCharacterDeath" />
 
-    <TextView
-        android:id="@+id/tvCharacterHair"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="17dp"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@id/tvCharacterHairTx"
-        app:layout_constraintTop_toTopOf="@id/tvCharacterHairTx"
-        tools:text="texto" />
+            <TextView
+                android:id="@+id/tvCharacterRealm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCharacterRealmTx"
+                app:layout_constraintTop_toTopOf="@id/tvCharacterRealmTx"
+                tools:text="texto" />
+
+            <TextView
+                android:id="@+id/tvCharacterHairTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="Hair:"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
+                app:layout_constraintTop_toBottomOf="@id/tvCharacterRealm" />
+
+            <TextView
+                android:id="@+id/tvCharacterHair"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCharacterHairTx"
+                app:layout_constraintTop_toTopOf="@id/tvCharacterHairTx"
+                tools:text="texto" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btQuotes"
@@ -214,10 +225,12 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"
         android:layout_marginVertical="20dp"
+        android:padding="30dp"
         android:text="@string/quotes"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacterHairTx" />
-
+        app:layout_constraintTop_toBottomOf="@id/cvDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

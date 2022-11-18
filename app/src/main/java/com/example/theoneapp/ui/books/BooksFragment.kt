@@ -38,15 +38,15 @@ class BooksFragment : Fragment() {
     }
 
     private fun initObserver() {
-        viewModel.booksResponse.observe(viewLifecycleOwner){
+        viewModel.booksResponse.observe(viewLifecycleOwner) {
             it?.let {
                 setAdapter(it)
             }
         }
-        viewModel.bookError.observe(viewLifecycleOwner){
+        viewModel.bookError.observe(viewLifecycleOwner) {
             apiError()
         }
-        viewModel.loadingStateLiveData.observe(viewLifecycleOwner){
+        viewModel.loadingStateLiveData.observe(viewLifecycleOwner) {
             it?.let {
                 handleProgressBar(it)
             }
@@ -55,18 +55,23 @@ class BooksFragment : Fragment() {
 
     private fun setAdapter(book: BookResponse) {
         binding.rvBookList.adapter = bookAdapter
-        binding.rvBookList.layoutManager = LinearLayoutManager(this.requireContext())
+        binding.rvBookList.layoutManager =
+            LinearLayoutManager(this.requireContext(), LinearLayoutManager.HORIZONTAL, false)
         bookAdapter.append(book.docs)
     }
 
     private fun apiError() {
-        Toast.makeText(this.requireContext(), "Ocorreu um erro durante o carregamento", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            this.requireContext(),
+            "Ocorreu um erro durante o carregamento",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     private fun handleProgressBar(state: BooksViewModel.State) {
-        when(state){
-            BooksViewModel.State.LOADING-> binding.progressBar.visibility = View.VISIBLE
-            BooksViewModel.State.LOADING_FINISHED-> binding.progressBar.visibility = View.GONE
+        when (state) {
+            BooksViewModel.State.LOADING -> binding.progressBar.visibility = View.VISIBLE
+            BooksViewModel.State.LOADING_FINISHED -> binding.progressBar.visibility = View.GONE
         }
     }
 
