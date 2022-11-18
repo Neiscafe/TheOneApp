@@ -66,10 +66,14 @@ class CharacterQuotesActivity : AppCompatActivity() {
     }
 
     private fun setAdapter(quoteResponse: QuoteResponse) {
-        val rvQuotesList = binding.rvQuotesList
-        rvQuotesList.adapter = quotesAdapter
-        rvQuotesList.layoutManager = LinearLayoutManager(this)
-        quotesAdapter.append(quoteResponse.quoteData)
-        Log.e(TAG, "setAdapter:"+quoteResponse.quoteData)
+        if(quoteResponse.quoteData.isNullOrEmpty()){
+            binding.tvError.visibility = View.VISIBLE
+        }else{
+            val rvQuotesList = binding.rvQuotesList
+            rvQuotesList.adapter = quotesAdapter
+            rvQuotesList.layoutManager = LinearLayoutManager(this)
+            quotesAdapter.append(quoteResponse.quoteData)
+            Log.e(TAG, "setAdapter:"+quoteResponse.quoteData)
+        }
     }
 }

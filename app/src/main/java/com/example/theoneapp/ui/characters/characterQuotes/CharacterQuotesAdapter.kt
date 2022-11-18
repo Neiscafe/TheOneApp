@@ -1,5 +1,6 @@
 package com.example.theoneapp.ui.characters.characterQuotes
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,26 +16,27 @@ class CharacterQuotesAdapter() : RecyclerView.Adapter<CharacterQuotesAdapter.Vie
     inner class ViewHolder(itemview: View) :
         RecyclerView.ViewHolder(itemview) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(quote: Quote) {
+            itemView.findViewById<TextView>(R.id.tvQuote).text = "\""+quote.dialog+"\""
 
             val movie = itemView.findViewById<TextView>(R.id.tvQuoteMovie)
-            itemView.findViewById<TextView>(R.id.tvQuote).text = quote.dialog
             if (quote.movieId.equals("5cd95395de30eff6ebccde56")) {
-                movie.text = "The Lord of the Rings Series"
+                movie.text = "(The Lord of the Rings Series)"
             } else if (quote.movieId.equals("5cd95395de30eff6ebccde57")) {
-                movie.text = "The Hobbit Series"
+                movie.text = "(The Hobbit Series)"
             } else if (quote.movieId.equals("5cd95395de30eff6ebccde58")) {
-                movie.text = "The Unexpected Journey"
+                movie.text = "(The Unexpected Journey)"
             } else if (quote.movieId.equals("5cd95395de30eff6ebccde59")) {
-                movie.text = "The Desolation of Smaug"
+                movie.text = "(The Desolation of Smaug)"
             } else if (quote.movieId.equals("5cd95395de30eff6ebccde5a")) {
-                movie.text = "The Battle of the Five Armies"
+                movie.text = "(The Battle of the Five Armies)"
             } else if (quote.movieId.equals("5cd95395de30eff6ebccde5b")) {
-                movie.text = "The Two Towers"
+                movie.text = "(The Two Towers)"
             } else if (quote.movieId.equals("5cd95395de30eff6ebccde5c")) {
-                movie.text = "The Fellowship of the Ring"
+                movie.text = "(The Fellowship of the Ring)"
             } else if (quote.movieId.equals("5cd95395de30eff6ebccde5d")) {
-                movie.text = "The Return of the King"
+                movie.text = "(The Return of the King)"
             }
         }
     }
