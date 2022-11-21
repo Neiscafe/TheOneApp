@@ -7,15 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResult
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.theoneapp.R
 import com.example.theoneapp.databinding.FragmentCharactersBinding
 import com.example.theoneapp.model.Character
-import com.example.theoneapp.model.CharacterResponse
 import com.example.theoneapp.ui.characters.characterDescription.CharacterDescriptionActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -27,6 +23,7 @@ class CharactersFragment : Fragment() {
     private val viewModel by viewModel<CharactersViewModel>()
     private lateinit var characterAdapter: CharacterAdapter
     private lateinit var searchView: SearchView
+    private var list: List<Character> = listOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -59,7 +56,9 @@ class CharactersFragment : Fragment() {
     private fun initObserver() {
         viewModel.charactersResponse.observe(viewLifecycleOwner) {
             it?.let {
-                setAdapter(it)
+                setAdapter(it.characters)
+                list = it.characters
+                setSearchView()
             }
         }
         viewModel.characterError.observe(viewLifecycleOwner) {
@@ -75,12 +74,17 @@ class CharactersFragment : Fragment() {
     private fun setSearchView() {
         searchView = binding.svSearch
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(p0: String?): Boolean {
-
+            override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
 
-            override fun onQueryTextChange(p0: String?): Boolean {
+            override fun onQueryTextChange(query: String?): Boolean {
+                if (!query.isNullOrEmpty()) {
+                    characterAdapter.appendQuery(query, sortedList = list)
+                } else {
+                    characterAdapter.appendQuery(sortedList = list)
+                }
+
                 return false
             }
         })
@@ -101,11 +105,11 @@ class CharactersFragment : Fragment() {
         ).show()
     }
 
-    private fun setAdapter(character: CharacterResponse) {
+    private fun setAdapter(characterList: List<Character>) {
         binding.rvCharacterList.apply {
             adapter = characterAdapter
             layoutManager = LinearLayoutManager(context)
-            characterAdapter.append(character.characters)
+            characterAdapter.append(characterList)
             characterAdapter.setClickListener(object : CharacterAdapter.ClickListener {
                 override fun onItemClick(characterItem: Character, position: Int) {
                     val intent = Intent(requireActivity(), CharacterDescriptionActivity::class.java)

@@ -9,7 +9,6 @@ import com.example.theoneapp.databinding.ListItemBinding
 import com.example.theoneapp.model.Character
 
 class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
-
     private val characterList = mutableListOf<Character>()
     private lateinit var clickListener: ClickListener
 
@@ -66,4 +65,22 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
+    fun appendQuery(query: String = "", sortedList: List<Character> = emptyList()) {
+        if (query.isEmpty()) {
+
+            characterList.clear()
+            characterList.addAll(sortedList)
+
+        } else {
+
+            val filteredList = sortedList.filter { character ->
+                character.name.lowercase().contains(query.lowercase())
+            }
+
+            characterList.clear()
+            characterList.addAll(filteredList)
+
+        }
+        notifyDataSetChanged()
+    }
 }

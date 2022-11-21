@@ -30,19 +30,6 @@ class CharactersViewModel(val repository: Repository) : ViewModel() {
         loadingStateLiveData.value = State.LOADING_FINISHED
     }
 
-//    fun characterSearch(p0: String?) {
-//        loadingStateLiveData.value = State.LOADING
-//        when(val response = repository.retrieveCharactersSearch()){
-//            is NetworkResponse.Failed -> {
-//                _characterError.value = Unit
-//            }
-//            is NetworkResponse.Success -> {
-//                _charactersResponse.value = response.data
-//            }
-//        }
-//        loadingStateLiveData.value = State.LOADING_FINISHED
-//    }
-
     enum class State {
         LOADING,
         LOADING_FINISHED
