@@ -60,7 +60,7 @@ class CharacterQuotesActivity : AppCompatActivity() {
     private fun apiError() {
         Toast.makeText(
             this,
-            "Ocorreu um erro durante o carregamento",
+            "Loading failed",
             Toast.LENGTH_SHORT
         ).show()
     }
@@ -73,7 +73,6 @@ class CharacterQuotesActivity : AppCompatActivity() {
             rvQuotesList.adapter = quotesAdapter
             rvQuotesList.layoutManager = LinearLayoutManager(this)
             quotesAdapter.append(quoteResponse.quoteData)
-            Log.e(TAG, "setAdapter:"+quoteResponse.quoteData)
         }
     }
 }
