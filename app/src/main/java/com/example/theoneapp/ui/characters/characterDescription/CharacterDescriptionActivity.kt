@@ -18,6 +18,7 @@ class CharacterDescriptionActivity : AppCompatActivity() {
 
         binding = ActivityCharacterDescriptionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         screenBinding()
 

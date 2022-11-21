@@ -23,6 +23,8 @@ class CharacterQuotesActivity : AppCompatActivity() {
         binding = ActivityCharacterQuotesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         quotesAdapter = CharacterQuotesAdapter()
         val result = intent.getStringExtra("characterId")
         viewModel.retrieveCharacterQuotes(result)
@@ -66,9 +68,9 @@ class CharacterQuotesActivity : AppCompatActivity() {
     }
 
     private fun setAdapter(quoteResponse: QuoteResponse) {
-        if(quoteResponse.quoteData.isNullOrEmpty()){
+        if (quoteResponse.quoteData.isNullOrEmpty()) {
             binding.tvError.visibility = View.VISIBLE
-        }else{
+        } else {
             val rvQuotesList = binding.rvQuotesList
             rvQuotesList.adapter = quotesAdapter
             rvQuotesList.layoutManager = LinearLayoutManager(this)

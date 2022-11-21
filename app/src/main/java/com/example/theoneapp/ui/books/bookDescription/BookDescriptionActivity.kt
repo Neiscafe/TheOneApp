@@ -22,6 +22,8 @@ class BookDescriptionActivity : AppCompatActivity() {
         binding = ActivityBookDescriptionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         val result = intent.getParcelableExtra<Book>("bookItem")
 
         bookDescriptionAdapter = BookDescriptionAdapter()
