@@ -1,31 +1,54 @@
 package com.example.theoneapp.ui.movies
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.theoneapp.R
+import com.example.theoneapp.databinding.ListItemBinding
 import com.example.theoneapp.model.Movie
 
-class MovieAdapter: RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     private val movieList = mutableListOf<Movie>()
+    private lateinit var clickListener: ClickListener
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        fun bind(movieName: String) {
-            itemView.findViewById<TextView>(R.id.tvName).text = movieName
+    inner class ViewHolder(val binding: ListItemBinding, listener: ClickListener) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.let {
+                it.setOnClickListener {
+                    listener.onItemClick(
+                        movieList[bindingAdapterPosition],
+                        bindingAdapterPosition
+                    )
+                }
+            }
+        }
+
+        fun bind(movie: Movie) {
+            binding.tvName.text = movie.name
         }
     }
 
+    interface ClickListener {
+        fun onItemClick(movieItem: Movie, position: Int)
+    }
+
+    fun setClickListener(listener: ClickListener) {
+        clickListener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(
+            ListItemBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            ), clickListener
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val movieName = movieList[position].name
-        holder.bind(movieName)
+        val movie = movieList[position]
+        holder.bind(movie)
     }
 
     override fun getItemCount(): Int {

@@ -20,7 +20,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
         clickListener = listener
     }
 
-    inner class ViewHolder(binding: ListItemBinding, listener: ClickListener) :
+    inner class ViewHolder(val binding: ListItemBinding, listener: ClickListener) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
@@ -35,7 +35,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
         }
 
         fun bind(characterName: String) {
-            itemView.findViewById<TextView>(R.id.tvName).text = characterName
+            binding.tvName.text = characterName
         }
     }
 

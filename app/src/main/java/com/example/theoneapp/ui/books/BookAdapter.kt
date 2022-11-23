@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.theoneapp.R
+import com.example.theoneapp.databinding.ImageListItemBinding
 import com.example.theoneapp.model.Book
 import com.example.theoneapp.model.Character
 import com.example.theoneapp.ui.characters.characterList.CharacterAdapter
@@ -25,7 +26,8 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
         clickListener = listener
     }
 
-    inner class ViewHolder(itemView: View, listener: ClickListener) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(val binding: ImageListItemBinding, listener: ClickListener) :
+        RecyclerView.ViewHolder(binding.root) {
         init {
             itemView.let {
                 it.setOnClickListener {
@@ -42,25 +44,30 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
                 if (equals("The Fellowship Of The Ring")) {
                     Glide.with(itemView)
                         .load("https://i.pinimg.com/564x/19/0f/43/190f4337809264046f61d4b2e1b41356.jpg")
-                        .into(itemView.findViewById(R.id.ivBookCover))
+                        .into(binding.ivBookCover)
                 } else if (equals("The Two Towers")) {
                     Glide.with(itemView)
                         .load("https://i.pinimg.com/736x/3e/6c/8e/3e6c8ef216142883ce6256345633169b.jpg")
-                        .into(itemView.findViewById(R.id.ivBookCover))
+                        .into(binding.ivBookCover)
 
                 } else {
                     Glide.with(itemView)
                         .load("https://i.pinimg.com/736x/e7/bb/56/e7bb565eccdde151313f7efc1de3b85e.jpg")
-                        .into(itemView.findViewById(R.id.ivBookCover))
+                        .into(binding.ivBookCover)
                 }
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.image_list_item, parent, false)
-        return ViewHolder(view, clickListener)
+
+        return ViewHolder(
+            ImageListItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            ), clickListener
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

@@ -7,10 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.theoneapp.R
 import com.example.theoneapp.databinding.FragmentMoviesBinding
+import com.example.theoneapp.model.Movie
 import com.example.theoneapp.model.MovieResponse
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MoviesFragment : Fragment() {
@@ -18,7 +17,7 @@ class MoviesFragment : Fragment() {
     private var _binding: FragmentMoviesBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModel<MoviesViewModel>()
-    private lateinit var adapter: MovieAdapter
+    private lateinit var movieAdapter: MovieAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +32,9 @@ class MoviesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = MovieAdapter()
+
+
+        movieAdapter = MovieAdapter()
         viewModel.retrieveMovies()
         initObserver()
     }
@@ -66,9 +67,15 @@ class MoviesFragment : Fragment() {
     }
 
     private fun setAdapter(movie: MovieResponse) {
-        binding.rvMovieList.adapter = adapter
+        binding.rvMovieList.adapter = movieAdapter
         binding.rvMovieList.layoutManager = LinearLayoutManager(this.requireContext())
-        adapter.append(movie.docs)
+        movieAdapter.append(movie.docs)
+        movieAdapter.setClickListener(object : MovieAdapter.ClickListener {
+            override fun onItemClick(movieItem: Movie, position: Int) {
+
+            }
+        })
+
     }
 
     override fun onDestroyView() {
