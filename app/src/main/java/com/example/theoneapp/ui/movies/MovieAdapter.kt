@@ -4,14 +4,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.theoneapp.databinding.ListItemBinding
+import com.example.theoneapp.databinding.MovieListItemBinding
 import com.example.theoneapp.model.Movie
+import com.bumptech.glide.Glide as Glide
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     private val movieList = mutableListOf<Movie>()
     private lateinit var clickListener: ClickListener
 
-    inner class ViewHolder(val binding: ListItemBinding, listener: ClickListener) :
+    inner class ViewHolder(val binding: MovieListItemBinding, listener: ClickListener) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
@@ -27,6 +29,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
         fun bind(movie: Movie) {
             binding.tvName.text = movie.name
+            binding.tvScore.text = String.format("Score: %.1f/100", movie.rottenTomatoesScore)
         }
     }
 
@@ -40,7 +43,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            ListItemBinding.inflate(
+            MovieListItemBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             ), clickListener
         )

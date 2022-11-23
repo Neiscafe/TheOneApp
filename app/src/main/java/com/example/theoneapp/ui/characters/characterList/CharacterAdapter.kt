@@ -34,8 +34,10 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
             }
         }
 
-        fun bind(characterName: String) {
-            binding.tvName.text = characterName
+        fun bind(characterItem: Character) {
+            binding.tvName.text = characterItem.name
+
+            binding.tvRace.text = characterItem.race
         }
     }
 
@@ -51,8 +53,8 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val characterName = characterList[position].name
-        holder.bind(characterName)
+        val characterItem = characterList[position]
+        holder.bind(characterItem)
     }
 
     override fun getItemCount(): Int {

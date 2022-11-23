@@ -1,5 +1,6 @@
 package com.example.theoneapp.ui.movies
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.theoneapp.databinding.FragmentMoviesBinding
 import com.example.theoneapp.model.Movie
 import com.example.theoneapp.model.MovieResponse
+import com.example.theoneapp.ui.movies.movieDescription.MovieDescriptionActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MoviesFragment : Fragment() {
@@ -72,7 +74,9 @@ class MoviesFragment : Fragment() {
         movieAdapter.append(movie.docs)
         movieAdapter.setClickListener(object : MovieAdapter.ClickListener {
             override fun onItemClick(movieItem: Movie, position: Int) {
-
+                val intent = Intent(requireActivity(), MovieDescriptionActivity::class.java)
+                intent.putExtra("movieItem", movieItem)
+                startActivity(intent)
             }
         })
 

@@ -1,5 +1,7 @@
 package com.example.theoneapp
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -19,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
+//        supportActionBar?.title = ""
+//        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#212121")))
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navView.setupWithNavController(navController)

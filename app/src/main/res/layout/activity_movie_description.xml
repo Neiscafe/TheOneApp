@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
-    tools:context=".ui.characters.characterDescription.CharacterDescriptionActivity">
+    tools:context=".ui.movies.movieDescription.MovieDescriptionActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
+        android:layout_marginHorizontal="10dp"
         app:cardBackgroundColor="@color/lightGrey"
         app:cardCornerRadius="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tvCharacterName"
+                android:id="@+id/tvMovieName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -31,27 +31,28 @@
                 android:textSize="40sp"
                 app:layout_constraintBottom_toTopOf="@id/vSeparator"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="character name" />
+                tools:text="movie name" />
 
             <View
                 android:id="@+id/vSeparator"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="@color/yellowDark"
-                app:layout_constraintBottom_toTopOf="@id/tvCharacterHeight"
+                app:layout_constraintBottom_toTopOf="@id/tvMovieBudget"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvCharacterName" />
+                app:layout_constraintTop_toBottomOf="@id/tvMovieName" />
 
             <TextView
-                android:layout_marginTop="20dp"
                 android:id="@+id/tvCharacterHeightTx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:padding="5dp"
-                android:text="Height:"
+                android:text="Runtime:"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.287"
@@ -59,7 +60,7 @@
                 app:layout_constraintTop_toBottomOf="@id/vSeparator" />
 
             <TextView
-                android:id="@+id/tvCharacterHeight"
+                android:id="@+id/tvMovieRuntime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -74,13 +75,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Race:"
+                android:text="Budget:"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvCharacterHeight" />
+                app:layout_constraintTop_toBottomOf="@id/tvMovieRuntime" />
 
             <TextView
-                android:id="@+id/tvCharacterRace"
+                android:id="@+id/tvMovieBudget"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -95,13 +96,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Gender:"
+                android:text="BoxOffice:"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvCharacterRace" />
+                app:layout_constraintTop_toBottomOf="@id/tvMovieBudget" />
 
             <TextView
-                android:id="@+id/tvCharacterGender"
+                android:id="@+id/tvMovieBoxOffice"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -116,13 +117,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Birth:"
+                android:text="Nominations:"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvCharacterGender" />
+                app:layout_constraintTop_toBottomOf="@id/tvMovieBoxOffice" />
 
             <TextView
-                android:id="@+id/tvCharacterBirth"
+                android:id="@+id/tvMovieNominations"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -138,13 +139,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Spouse:"
+                android:text="Awards:"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvCharacterBirth" />
+                app:layout_constraintTop_toBottomOf="@id/tvMovieNominations" />
 
             <TextView
-                android:id="@+id/tvCharacterSpouse"
+                android:id="@+id/tvMovieAwards"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -160,13 +161,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Death:"
+                android:text="Score:"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvCharacterSpouse" />
+                app:layout_constraintTop_toBottomOf="@id/tvMovieAwards" />
 
             <TextView
-                android:id="@+id/tvCharacterDeath"
+                android:id="@+id/tvMovieScore"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -176,63 +177,6 @@
                 app:layout_constraintTop_toTopOf="@id/tvCharacterDeathTx"
                 tools:text="texto" />
 
-            <TextView
-                android:id="@+id/tvCharacterRealmTx"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Realm:"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvCharacterDeath" />
-
-            <TextView
-                android:id="@+id/tvCharacterRealm"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tvCharacterRealmTx"
-                app:layout_constraintTop_toTopOf="@id/tvCharacterRealmTx"
-                tools:text="texto" />
-
-            <TextView
-                android:id="@+id/tvCharacterHairTx"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Hair:"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvCharacterRealm" />
-
-            <TextView
-                android:id="@+id/tvCharacterHair"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tvCharacterHairTx"
-                app:layout_constraintTop_toTopOf="@id/tvCharacterHairTx"
-                tools:text="texto" />
-
-            <Button
-                android:id="@+id/btQuotes"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="60dp"
-                android:layout_marginVertical="20dp"
-                android:backgroundTint="@color/yellow"
-                android:padding="10dp"
-                android:text="@string/quotes"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvCharacterHair" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

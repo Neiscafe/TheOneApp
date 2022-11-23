@@ -30,9 +30,7 @@ class CharactersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentCharactersBinding.inflate(inflater, container, false)
-//        supportActionBar?.hide()
         val root: View = binding.root
 
         return root

@@ -17,6 +17,13 @@
         android:theme="@style/Theme.TheOneApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.movies.movieDescription.MovieDescriptionActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.books.bookDescription.BookDescriptionActivity"
             android:exported="false">
             <meta-data
@@ -45,6 +52,7 @@
             android:label="@string/app_name">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
+
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
