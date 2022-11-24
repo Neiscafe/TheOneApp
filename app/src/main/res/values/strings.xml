@@ -24,4 +24,14 @@
     <string name="nominations">Nominations</string>
     <string name="awards">Awards</string>
     <string name="score">Score</string>
+    <string name="details">Details</string>
+    <string name="height">Height</string>
+    <string name="race">Race</string>
+    <string name="gender">Gender</string>
+    <string name="birth">Birth</string>
+    <string name="spouse">Spouse</string>
+    <string name="death">Death</string>
+    <string name="realm">Realm</string>
+    <string name="hair">Hair</string>
+    <string name="click_to_see_quotes">Click to see quotes</string>
 </resources>
