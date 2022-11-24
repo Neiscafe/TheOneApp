@@ -27,7 +27,7 @@ class MovieDescriptionActivity : AppCompatActivity() {
         binding.tvMovieName.text = result?.name
         binding.tvMovieRuntime.text = String.format("%d minutes", result?.runtimeInMinutes)
         binding.tvMovieBudget.text = String.format("%d million", result?.budgetInMillions)
-        binding.tvMovieBoxOffice.text = String.format("%.1f million", result?.boxOfficeRevenueInMillions)
+        binding.tvMovieBoxOffice.text = String.format("%f million", result?.boxOfficeRevenueInMillions)
         binding.tvMovieNominations.text = String.format("%d", result?.academyAwardNominations)
         binding.tvMovieAwards.text = String.format("%d", result?.academyAwardWins)
         binding.tvMovieScore.text = String.format("%.1f", result?.rottenTomatoesScore)

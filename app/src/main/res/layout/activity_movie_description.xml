@@ -7,176 +7,385 @@
     android:background="@color/grey"
     tools:context=".ui.movies.movieDescription.MovieDescriptionActivity">
 
+    <TextView
+        android:id="@+id/tvMovieName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/vSeparator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="movie name" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Details"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/vSeparator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMovieName"
+        app:layout_constraintVertical_bias="0.28" />
+
+    <View
+        android:id="@+id/vSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="@color/yellowDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.237" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        app:cardBackgroundColor="@color/lightGrey"
+        android:layout_marginHorizontal="12dp"
+        app:cardBackgroundColor="@color/mediumGray"
         app:cardCornerRadius="6dp"
+        app:layout_constraintVertical_bias="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tvMovieName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="@color/yellow"
-                android:textSize="40sp"
-                app:layout_constraintBottom_toTopOf="@id/vSeparator"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="movie name" />
-
-            <View
-                android:id="@+id/vSeparator"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/yellowDark"
-                app:layout_constraintBottom_toTopOf="@id/tvMovieBudget"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvMovieName" />
-
-            <TextView
-                android:id="@+id/tvCharacterHeightTx"
+                android:id="@+id/tvMovieRuntimeTx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:padding="5dp"
-                android:text="Runtime:"
-                android:textSize="20sp"
+                android:text="@string/runtime2"
+                android:textColor="@color/darkWhite"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.287"
+                app:layout_constraintHorizontal_bias="0.08"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/vSeparator" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tvMovieRuntime"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toTopOf="@id/tvCharacterHeightTx"
-                tools:text="texto" />
-
-            <TextView
-                android:id="@+id/tvCharacterRaceTx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Budget:"
+                android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvMovieRuntime" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvMovieRuntimeTx"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieRuntimeTx"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="169 minutes" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        app:cardBackgroundColor="@color/mediumGray"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintVertical_bias="0.42"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvMovieBudgetTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/budget"
+                android:textColor="@color/darkWhite"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.08"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tvMovieBudget"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tvCharacterRaceTx"
-                app:layout_constraintTop_toTopOf="@id/tvCharacterRaceTx"
-                tools:text="texto" />
-
-            <TextView
-                android:id="@+id/tvCharacterGenderTx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="BoxOffice:"
+                android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvMovieBudget" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvMovieBudgetTx"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieBudgetTx"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="200 million" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        app:cardBackgroundColor="@color/mediumGray"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintVertical_bias="0.54"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvMovieBoxOfficeTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/boxoffice"
+                android:textColor="@color/darkWhite"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.076"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tvMovieBoxOffice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tvCharacterGenderTx"
-                app:layout_constraintTop_toTopOf="@id/tvCharacterGenderTx"
-                tools:text="texto" />
-
-            <TextView
-                android:id="@+id/tvCharacterBirthTx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Nominations:"
+                android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvMovieBoxOffice" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvMovieBoxOfficeTx"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieBoxOfficeTx"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="1021.0 million" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        app:cardBackgroundColor="@color/mediumGray"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintVertical_bias="0.66"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvMovieNominationsTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/nominations"
+                android:textColor="@color/darkWhite"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.083"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tvMovieNominations"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/tvCharacterBirthTx"
-                app:layout_constraintTop_toTopOf="@id/tvCharacterBirthTx"
-                tools:text="texto" />
-
-            <TextView
-                android:id="@+id/tvCharacterSpouseTx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Awards:"
+                android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvMovieNominations" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvMovieNominationsTx"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieNominationsTx"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        app:cardBackgroundColor="@color/mediumGray"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintVertical_bias="0.78"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvMovieAwardsTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/awards"
+                android:textColor="@color/darkWhite"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.072"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tvMovieAwards"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/tvCharacterSpouseTx"
-                app:layout_constraintTop_toTopOf="@id/tvCharacterSpouseTx"
-                tools:text="texto" />
-
-            <TextView
-                android:id="@+id/tvCharacterDeathTx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Score:"
+                android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"
-                app:layout_constraintTop_toBottomOf="@id/tvMovieAwards" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvMovieAwardsTx"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieAwardsTx"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        app:cardBackgroundColor="@color/mediumGray"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintVertical_bias="0.90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvMovieScoreTx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/score"
+                android:textColor="@color/darkWhite"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.063"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tvMovieScore"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
+                android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tvCharacterDeathTx"
-                app:layout_constraintTop_toTopOf="@id/tvCharacterDeathTx"
-                tools:text="texto" />
-
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvMovieScoreTx"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieScoreTx"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="64.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvCharacterBirthTx"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:padding="5dp"-->
+    <!--                android:text="Nominations:"-->
+    <!--                android:textSize="20sp"-->
+    <!--                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/tvMovieBoxOffice" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvMovieNominations"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:padding="5dp"-->
+    <!--                android:textSize="20sp"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintHorizontal_bias="0.0"-->
+    <!--                app:layout_constraintStart_toEndOf="@id/tvCharacterBirthTx"-->
+    <!--                app:layout_constraintTop_toTopOf="@id/tvCharacterBirthTx"-->
+    <!--                tools:text="texto" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvCharacterSpouseTx"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:padding="5dp"-->
+    <!--                android:text="Awards:"-->
+    <!--                android:textSize="20sp"-->
+    <!--                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/tvMovieNominations" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvMovieAwards"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:padding="5dp"-->
+    <!--                android:textSize="20sp"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintHorizontal_bias="0.0"-->
+    <!--                app:layout_constraintStart_toEndOf="@id/tvCharacterSpouseTx"-->
+    <!--                app:layout_constraintTop_toTopOf="@id/tvCharacterSpouseTx"-->
+    <!--                tools:text="texto" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvCharacterDeathTx"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:padding="5dp"-->
+    <!--                android:text="Score:"-->
+    <!--                android:textSize="20sp"-->
+    <!--                app:layout_constraintEnd_toEndOf="@id/tvCharacterHeightTx"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/tvMovieAwards" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvMovieScore"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:padding="5dp"-->
+    <!--                android:textSize="20sp"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toEndOf="@id/tvCharacterDeathTx"-->
+    <!--                app:layout_constraintTop_toTopOf="@id/tvCharacterDeathTx"-->
+    <!--                tools:text="texto" />-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>
