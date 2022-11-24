@@ -34,4 +34,6 @@
     <string name="realm">Realm</string>
     <string name="hair">Hair</string>
     <string name="click_to_see_quotes">Click to see quotes</string>
+    <string name="chapters">Chapters</string>
+    <string name="no_quotes_found">No quotes found</string>
 </resources>

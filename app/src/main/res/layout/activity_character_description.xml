@@ -25,7 +25,7 @@
             tools:text="movie name" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/details"
@@ -33,7 +33,6 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/vSeparator"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCharacterName"
             app:layout_constraintVertical_bias="0.28" />
