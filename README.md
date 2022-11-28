@@ -17,9 +17,5 @@ Resources used:
  - Material Design Colors for color palette;
  
  Screens:
- 
- 
- 
+![book_list](https://user-images.githubusercontent.com/110692081/204357133-1519e740-d521-46ce-a608-1e0cd084fbdc.png)
 
- 
- 
