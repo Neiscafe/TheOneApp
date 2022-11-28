@@ -85,7 +85,7 @@
 
                 <TextView
                     android:id="@+id/tvCharacterHeight"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:textColor="@color/white"
@@ -93,6 +93,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tvCharacterHeightTx"
                     app:layout_constraintTop_toBottomOf="@id/tvCharacterHeightTx"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="198cm" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -131,7 +132,7 @@
 
                 <TextView
                     android:id="@+id/tvCharacterRace"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:textColor="@color/white"
@@ -139,6 +140,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tvCharacterRaceTx"
                     app:layout_constraintTop_toBottomOf="@id/tvCharacterRaceTx"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="Human" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -177,7 +179,7 @@
 
                 <TextView
                     android:id="@+id/tvCharacterGender"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:textColor="@color/white"
@@ -185,6 +187,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tvCharacterGenderTx"
                     app:layout_constraintTop_toBottomOf="@id/tvCharacterGenderTx"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="Male" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -223,7 +226,7 @@
 
                 <TextView
                     android:id="@+id/tvCharacterBirth"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:textColor="@color/white"
@@ -231,6 +234,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tvCharacterBirthTx"
                     app:layout_constraintTop_toBottomOf="@id/tvCharacterBirthTx"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="March 1, 2931" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -269,7 +273,7 @@
 
                 <TextView
                     android:id="@+id/tvCharacterSpouse"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:textColor="@color/white"
@@ -277,6 +281,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tvCharacterSpouseTx"
                     app:layout_constraintTop_toBottomOf="@id/tvCharacterSpouseTx"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="March 1, 2931" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -315,7 +320,7 @@
 
                 <TextView
                     android:id="@+id/tvCharacterDeath"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:textColor="@color/white"
@@ -323,6 +328,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tvCharacterDeathTx"
                     app:layout_constraintTop_toBottomOf="@id/tvCharacterDeathTx"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="FO 120" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -361,7 +367,7 @@
 
                 <TextView
                     android:id="@+id/tvCharacterRealm"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:textColor="@color/white"
@@ -369,6 +375,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tvCharacterRealmTx"
                     app:layout_constraintTop_toBottomOf="@id/tvCharacterRealmTx"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="Reunited Kingdom, Arnor, Gondor" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -408,13 +415,14 @@
                 <TextView
                     android:id="@+id/tvCharacterHair"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:padding="5dp"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tvCharacterHairTx"
                     app:layout_constraintTop_toBottomOf="@id/tvCharacterHairTx"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="Dark" />
             </androidx.constraintlayout.widget.ConstraintLayout>
