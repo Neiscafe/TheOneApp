@@ -28,7 +28,7 @@ After clicking on one book item you are redirected to this description screen, w
 
 ![character_list](https://user-images.githubusercontent.com/110692081/204357349-bd902bb7-12c3-40a9-aae5-85300a99f10d.png)
 
-Y ou can see this screen after clicking on the character icon in the bottom navigation. It show the name and race of all the Lord of The Rings characters in alphabetical order, and can be sorted with the search bar. Each character item is clickable, and will redirect to a details screen.
+You can see this screen after clicking on the character icon in the bottom navigation. It show the name and race of all the Lord of The Rings characters in alphabetical order, and can be sorted with the search bar. Each character item is clickable, and will redirect to a details screen.
 
 ![character_description](https://user-images.githubusercontent.com/110692081/204357601-5f8ab9da-b699-4c27-8c64-00edd9fe89c1.png)
 
@@ -36,7 +36,7 @@ After clicking on one character item you are redirected to this description scre
 
 ![character_description_2](https://user-images.githubusercontent.com/110692081/204357567-eea7534e-0718-4769-b238-18e88616b5c5.png)
 
-This is the bottom part of the screen, that is shown when you scroll down. It has a quotes button, which redirects to a screen showing all the quotes from the selected character.
+This is the bottom part of the screen that's shown when you scroll down. It has a quotes button, which redirects to a screen showing all the quotes from the selected character.
 
 ![character_quotes](https://user-images.githubusercontent.com/110692081/204357645-6a3c248b-950e-4406-85f5-8189833fc33f.png)
 
