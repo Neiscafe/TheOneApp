@@ -8,6 +8,12 @@ TheOneApp has the following functionalities:
  - Show all the Lord of The Rings and The Hobbit characters, it's details and quotes;
  - Search one specific character;
  - Show all the Lord of The Rings and The Hobbit movies and it's details.
+
+How to use the app:
+
+Currently, the app is only available as a Android Studio Project, which means you have to download Android Studio, download the .zip files of the project, extract them to a folder, to then be able to open it with Android Studio and run the app.
+
+In future releases, the app may be available as a executable file.
  
 Resources used:
  - Retrofit, for retrieving json data from the API;
