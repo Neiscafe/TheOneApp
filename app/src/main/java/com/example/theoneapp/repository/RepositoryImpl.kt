@@ -3,6 +3,11 @@ package com.example.theoneapp.repository
 import android.content.ContentValues.TAG
 import android.util.Log
 import com.example.theoneapp.model.*
+import com.example.theoneapp.model.book.BookResponse
+import com.example.theoneapp.model.chapter.ChapterResponse
+import com.example.theoneapp.model.character.CharacterResponse
+import com.example.theoneapp.model.movie.MovieResponse
+import com.example.theoneapp.model.quote.QuoteResponse
 import com.example.theoneapp.retrofit.Api
 
 class RepositoryImpl(val api: Api) : Repository {

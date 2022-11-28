@@ -1,4 +1,4 @@
-package com.example.theoneapp.ui.movies
+package com.example.theoneapp.ui.movies.movieList
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.theoneapp.databinding.FragmentMoviesBinding
-import com.example.theoneapp.model.Movie
-import com.example.theoneapp.model.MovieResponse
+import com.example.theoneapp.model.movie.Movie
+import com.example.theoneapp.model.movie.MovieResponse
 import com.example.theoneapp.ui.movies.movieDescription.MovieDescriptionActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -59,8 +59,8 @@ class MoviesFragment : Fragment() {
 
     private fun handleProgressBar(state: MoviesViewModel.State) {
         when(state){
-            MoviesViewModel.State.LOADING->binding.progressBar.visibility = View.VISIBLE
-            MoviesViewModel.State.LOADING_FINISHED->binding.progressBar.visibility = View.GONE
+            MoviesViewModel.State.LOADING ->binding.progressBar.visibility = View.VISIBLE
+            MoviesViewModel.State.LOADING_FINISHED ->binding.progressBar.visibility = View.GONE
         }
     }
 

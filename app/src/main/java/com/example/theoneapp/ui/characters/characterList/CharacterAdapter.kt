@@ -2,11 +2,9 @@ package com.example.theoneapp.ui.characters.characterList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.theoneapp.R
 import com.example.theoneapp.databinding.ListItemBinding
-import com.example.theoneapp.model.Character
+import com.example.theoneapp.model.character.Character
 
 class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
     private val characterList = mutableListOf<Character>()

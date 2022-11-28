@@ -1,4 +1,4 @@
-package com.example.theoneapp.model
+package com.example.theoneapp.model.book
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

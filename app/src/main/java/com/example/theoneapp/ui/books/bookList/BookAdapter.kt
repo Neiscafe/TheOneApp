@@ -1,11 +1,11 @@
-package com.example.theoneapp.ui.books
+package com.example.theoneapp.ui.books.bookList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.theoneapp.databinding.BookListItemBinding
-import com.example.theoneapp.model.Book
+import com.example.theoneapp.model.book.Book
 
 class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
 

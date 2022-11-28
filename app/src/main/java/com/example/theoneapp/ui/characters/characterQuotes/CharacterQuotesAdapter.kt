@@ -2,13 +2,10 @@ package com.example.theoneapp.ui.characters.characterQuotes
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.theoneapp.R
 import com.example.theoneapp.databinding.QuoteListItemBinding
-import com.example.theoneapp.model.Quote
+import com.example.theoneapp.model.quote.Quote
 
 class CharacterQuotesAdapter() : RecyclerView.Adapter<CharacterQuotesAdapter.ViewHolder>() {
 

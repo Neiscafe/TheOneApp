@@ -3,11 +3,11 @@ package com.example.theoneapp.koin
 import com.example.theoneapp.repository.Repository
 import com.example.theoneapp.repository.RepositoryImpl
 import com.example.theoneapp.retrofit.ClientRetrofit
-import com.example.theoneapp.ui.books.BooksViewModel
+import com.example.theoneapp.ui.books.bookList.BooksViewModel
 import com.example.theoneapp.ui.books.bookDescription.BookDescriptionViewModel
 import com.example.theoneapp.ui.characters.characterQuotes.CharacterQuotesViewModel
 import com.example.theoneapp.ui.characters.characterList.CharactersViewModel
-import com.example.theoneapp.ui.movies.MoviesViewModel
+import com.example.theoneapp.ui.movies.movieList.MoviesViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

@@ -1,10 +1,10 @@
-package com.example.theoneapp.ui.books
+package com.example.theoneapp.ui.books.bookList
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.theoneapp.model.BookResponse
+import com.example.theoneapp.model.book.BookResponse
 import com.example.theoneapp.model.NetworkResponse
 import com.example.theoneapp.repository.Repository
 import kotlinx.coroutines.launch

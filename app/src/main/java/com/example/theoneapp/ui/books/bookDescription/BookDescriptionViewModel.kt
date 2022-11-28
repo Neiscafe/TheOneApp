@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.theoneapp.model.ChapterResponse
+import com.example.theoneapp.model.chapter.ChapterResponse
 import com.example.theoneapp.model.NetworkResponse
 import com.example.theoneapp.repository.Repository
 import kotlinx.coroutines.launch
