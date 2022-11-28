@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/svSearch"
-        tools:listitem="@layout/list_item" />
+        tools:listitem="@layout/character_list_item" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -40,5 +40,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:indeterminateTint="@color/yellow"
+        android:indeterminateTintMode="src_in" />
 </androidx.constraintlayout.widget.ConstraintLayout>

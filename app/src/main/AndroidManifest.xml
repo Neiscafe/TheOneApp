@@ -41,7 +41,7 @@
             android:name=".ui.characters.characterDescription.CharacterDescriptionActivity"
             android:exported="false"
             android:label="@string/title_activity_character_description"
-            android:theme="@style/Theme.TheOneApp.NoActionBar">
+            android:theme="@style/Theme.TheOneApp">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

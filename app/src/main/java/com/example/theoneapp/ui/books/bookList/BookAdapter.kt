@@ -1,17 +1,11 @@
-package com.example.theoneapp.ui.books
+package com.example.theoneapp.ui.books.bookList
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.theoneapp.R
-import com.example.theoneapp.databinding.ImageListItemBinding
-import com.example.theoneapp.model.Book
-import com.example.theoneapp.model.Character
-import com.example.theoneapp.ui.characters.characterList.CharacterAdapter
+import com.example.theoneapp.databinding.BookListItemBinding
+import com.example.theoneapp.model.book.Book
 
 class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
 
@@ -26,7 +20,7 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
         clickListener = listener
     }
 
-    inner class ViewHolder(val binding: ImageListItemBinding, listener: ClickListener) :
+    inner class ViewHolder(val binding: BookListItemBinding, listener: ClickListener) :
         RecyclerView.ViewHolder(binding.root) {
         init {
             itemView.let {
@@ -62,7 +56,7 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            ImageListItemBinding.inflate(
+            BookListItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false

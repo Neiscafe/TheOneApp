@@ -3,7 +3,7 @@ package com.example.theoneapp.ui.movies.movieDescription
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.theoneapp.databinding.ActivityMovieDescriptionBinding
-import com.example.theoneapp.model.Movie
+import com.example.theoneapp.model.movie.Movie
 
 class MovieDescriptionActivity : AppCompatActivity() {
 

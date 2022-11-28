@@ -1,6 +1,11 @@
 package com.example.theoneapp.retrofit
 
 import com.example.theoneapp.model.*
+import com.example.theoneapp.model.book.BookResponse
+import com.example.theoneapp.model.chapter.ChapterResponse
+import com.example.theoneapp.model.character.CharacterResponse
+import com.example.theoneapp.model.movie.MovieResponse
+import com.example.theoneapp.model.quote.QuoteResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

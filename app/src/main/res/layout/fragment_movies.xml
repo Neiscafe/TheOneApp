@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingTop="30dp"
     android:background="@color/grey"
-    tools:context=".ui.movies.MoviesFragment">
+    tools:context=".ui.movies.movieList.MoviesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMovieList"
@@ -26,5 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:indeterminateTint="@color/yellow"
+        android:indeterminateTintMode="src_in"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

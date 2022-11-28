@@ -1,14 +1,12 @@
 package com.example.theoneapp.ui.characters.characterQuotes
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.theoneapp.databinding.ActivityCharacterQuotesBinding
-import com.example.theoneapp.model.QuoteResponse
+import com.example.theoneapp.model.quote.QuoteResponse
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CharacterQuotesActivity : AppCompatActivity() {

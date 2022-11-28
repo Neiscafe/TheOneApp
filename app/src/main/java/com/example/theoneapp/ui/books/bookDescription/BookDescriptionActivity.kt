@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.theoneapp.databinding.ActivityBookDescriptionBinding
-import com.example.theoneapp.model.Book
-import com.example.theoneapp.model.ChapterResponse
+import com.example.theoneapp.model.book.Book
+import com.example.theoneapp.model.chapter.ChapterResponse
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BookDescriptionActivity : AppCompatActivity() {

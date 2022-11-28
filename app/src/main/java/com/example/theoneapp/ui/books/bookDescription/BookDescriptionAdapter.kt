@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.theoneapp.databinding.ChapterListItemBinding
-import com.example.theoneapp.model.Chapter
+import com.example.theoneapp.model.chapter.Chapter
 
 class BookDescriptionAdapter : Adapter<BookDescriptionAdapter.ViewHolder>() {
 

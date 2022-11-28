@@ -3,9 +3,8 @@ package com.example.theoneapp.ui.characters.characterDescription
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
 import com.example.theoneapp.databinding.ActivityCharacterDescriptionBinding
-import com.example.theoneapp.model.Character
+import com.example.theoneapp.model.character.Character
 import com.example.theoneapp.ui.characters.characterQuotes.CharacterQuotesActivity
 
 

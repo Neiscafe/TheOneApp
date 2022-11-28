@@ -1,12 +1,10 @@
-package com.example.theoneapp.ui.movies
+package com.example.theoneapp.ui.movies.movieList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.theoneapp.databinding.ListItemBinding
 import com.example.theoneapp.databinding.MovieListItemBinding
-import com.example.theoneapp.model.Movie
-import com.bumptech.glide.Glide as Glide
+import com.example.theoneapp.model.movie.Movie
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 

@@ -9,11 +9,9 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.theoneapp.R
 import com.example.theoneapp.databinding.FragmentCharactersBinding
-import com.example.theoneapp.model.Character
+import com.example.theoneapp.model.character.Character
 import com.example.theoneapp.ui.characters.characterDescription.CharacterDescriptionActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CharactersFragment : Fragment() {
@@ -30,10 +28,10 @@ class CharactersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCharactersBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        return root
+        _binding = FragmentCharactersBinding.inflate(inflater, container, false)
+        return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,13 +40,6 @@ class CharactersFragment : Fragment() {
         characterAdapter = CharacterAdapter()
         viewModel.retrieveCharacters()
         initObserver()
-        visibleBottomNavBar()
-    }
-
-    private fun visibleBottomNavBar() {
-        activity?.apply {
-            findViewById<BottomNavigationView>(R.id.nav_view).visibility = View.VISIBLE
-        }
     }
 
     private fun initObserver() {
