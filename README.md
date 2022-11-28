@@ -15,6 +15,8 @@ Currently, the app is only available as a Android Studio Project, which means yo
 
 In future releases, the app may be available as a executable file.
  
+The app was built using MVVM architecture and with the minimum requirement of Android API 21.
+ 
 Resources used:
  - Retrofit, for retrieving json data from the API;
  - Koin, for dependency injection;
