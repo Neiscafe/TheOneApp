@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.theoneapp.databinding.FragmentBooksBinding
 import com.example.theoneapp.model.Book
 import com.example.theoneapp.model.BookResponse
@@ -57,9 +57,11 @@ class BooksFragment : Fragment() {
     }
 
     private fun setAdapter(book: BookResponse) {
-        binding.rvBookList.adapter = bookAdapter
-        binding.rvBookList.layoutManager =
-            LinearLayoutManager(this.requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        val vpBooks = binding.vpBooks
+        vpBooks.adapter = bookAdapter
+        vpBooks.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+
         bookAdapter.append(book.docs)
         bookAdapter.setClickListener(object : BookAdapter.ClickListener {
             override fun onItemClick(bookItem: Book, position: Int) {
@@ -68,6 +70,9 @@ class BooksFragment : Fragment() {
                 startActivity(intent)
             }
         })
+
+        val indicator = binding.ciBooks
+        indicator.setViewPager(vpBooks)
     }
 
     private fun apiError() {
