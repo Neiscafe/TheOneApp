@@ -13,8 +13,11 @@ Resources used:
  - Retrofit, for retrieving json data from the API;
  - Koin, for dependency injection;
  - Glide, for image loading;
- - Material Design Components for some screen elements;
+ - Material Design Components for screen elements;
  - Material Design Colors for color palette;
+ 
+ Screens:
+ 
  
  
 
