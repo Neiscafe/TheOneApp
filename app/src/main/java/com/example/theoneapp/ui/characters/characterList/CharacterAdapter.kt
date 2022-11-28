@@ -3,7 +3,7 @@ package com.example.theoneapp.ui.characters.characterList
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.theoneapp.databinding.ListItemBinding
+import com.example.theoneapp.databinding.CharacterListItemBinding
 import com.example.theoneapp.model.character.Character
 
 class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
@@ -18,7 +18,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
         clickListener = listener
     }
 
-    inner class ViewHolder(val binding: ListItemBinding, listener: ClickListener) :
+    inner class ViewHolder(val binding: CharacterListItemBinding, listener: ClickListener) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
@@ -41,7 +41,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            ListItemBinding.inflate(
+            CharacterListItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false

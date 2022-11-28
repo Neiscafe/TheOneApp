@@ -29,7 +29,6 @@ class BooksFragment : Fragment() {
     ): View {
 
         _binding = FragmentBooksBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 

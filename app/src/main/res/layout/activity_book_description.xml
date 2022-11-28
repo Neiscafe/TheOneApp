@@ -27,6 +27,7 @@
         android:text="@string/chapters"
         android:textColor="@color/darkWhite"
         android:textSize="20sp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvBookTitle"
@@ -39,6 +40,7 @@
         android:layout_width="0dp"
         android:layout_marginHorizontal="5dp"
         android:layout_height="2dp"
+        android:layout_marginVertical="40dp"
         android:background="@color/yellowDark"
         app:layout_constraintBottom_toTopOf="@id/rvChapterList"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,11 +51,10 @@
         android:id="@+id/rvChapterList"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vBookSeparator"
+        android:layout_marginTop="10dp"
         tools:listitem="@layout/chapter_list_item" />
 
     <ProgressBar
